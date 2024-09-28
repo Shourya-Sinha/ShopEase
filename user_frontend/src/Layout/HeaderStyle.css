@@ -1,0 +1,161 @@
+#main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 0;
+    /* height:80x !important; */
+    transition: background-color 0.4s ease, padding 0.4s ease;
+    z-index: 1000;
+  }
+  
+  #main-header.scrolled {
+    background-color: rgba(34, 36, 41, 0.9); /* Dark background when scrolled */
+    padding: 17px 0; /* Smaller padding when scrolled */
+    /* height: 60px !important; */
+    color: #fff;
+  }
+
+  .scrolled {
+    color: #fff !important; /* White text when scrolled */
+  }
+  
+  /* Button color when header is not scrolled */
+  .notScrolled {
+    color: #333 !important;
+  }
+  .menuA{
+    padding-left: 1;
+    padding-right: 1;
+  }
+  .slider {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 5s ease-in-out, transform 5s ease-in-out;
+}
+
+.slide img {
+    max-width: 150px;
+    border-radius: 8px;
+    transition: transform 5s ease-in-out;
+}
+
+.slide .content {
+    margin-left: 20px;
+    text-align: left;
+}
+
+#slide1 { background: #ceddfe; }
+#slide2 { background: #d8e2dc; }
+#slide3 { background: #f2d2d2; }
+
+@keyframes slide {
+    0% { opacity: 0; transform: scale(1.1); }
+    50% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(1.1); }
+}
+
+.slide.active {
+    animation: slide 6s infinite;
+}
+
+/* Navigation buttons */
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #fff;
+    border: none;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    cursor: pointer;
+    z-index: 2;
+}
+@keyframes rotateIcon {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  .customeGradient {
+    position: absolute;
+    overflow: hidden;
+    width: 60px; /* Set the size for the circle */
+    height: 60px; /* Set the same height to make it a circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* Make the box circular */
+    background: 
+      radial-gradient(circle at center, 
+        rgba(255, 255, 255, 0) 40%, 
+        rgba(255, 255, 255, 0.1) 40%, 
+        rgba(255, 255, 255, 0.1) 45%, 
+        rgba(255, 255, 255, 0) 45%), 
+      linear-gradient(135deg, #f5a623, #f76b1c, #ff0099, #493240); /* Gradient background */
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3); /* Blur shadow effect for depth */
+    backdrop-filter: blur(10px); /* Adjust the blur effect */
+    padding: 10px; /* Adjust padding */
+    margin: auto; /* Center the circle horizontally */
+    transform: rotate3d(-1, 1, 0, 120deg); /* Tilt the circle to 120 degrees */
+  }
+  
+  .firsdtGradient{
+    position: absolute;
+    overflow: hidden;
+    width: 60px; /* Set the size for the circle */
+    height: 60px; /* Set the same height to make it a circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* Make the box circular */
+    background: 
+    radial-gradient(circle at center, 
+      rgba(255, 255, 255, 0) 40%, 
+      rgba(255, 255, 255, 0.1) 40%, 
+      rgba(255, 255, 255, 0.1) 45%, 
+      rgba(255, 255, 255, 0) 45%), 
+    linear-gradient(135deg, #f5a623, #f76b1c, #ff0099, #493240); /* Gradient background */
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3); /* Blur shadow effect for depth */
+    backdrop-filter: blur(50px); /* Adjust the blur effect */
+    padding: 20px;
+    margin: auto;
+    transform: rotate3d(1, 1, 0, 120deg),
+  }
+
+  .gradientHeading {
+    font-size: 1.5rem; /* Adjust as needed */
+    font-weight: 700;
+    font-family: Alegreya;
+    background: linear-gradient(135deg, #f5a623, #f76b1c, #ff0099, #493240);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Makes the text color transparent to show the gradient */
+    display: inline-block; /* Change to inline-block to handle pseudo-elements properly */
+    position: relative;
+  }
+  .gradientHeading::after {
+    content: '';
+    display: block;
+    position: relative;
+    bottom: 10px; /* Space between text and underline */
+    width: 100%;
+    margin-left: 39px;
+    height: 10px; /* Height of the zigzag */
+    background: linear-gradient(135deg, #f5a623, #f76b1c, #ff0099, #493240); /* Gradient color */
+    clip-path: path('M10,70 L210,10 L60,0 L60,20 L30,10 L200,10 L60,0 L70,10 L60,0 L90,10 L70,0 V10 H0 Z');
+    /* The path creates the zigzag shape; adjust the values to change the zigzag size */
+  }
