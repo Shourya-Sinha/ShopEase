@@ -65,6 +65,8 @@ const OrderDeatils = () => {
   ? product.ratings.reduce((acc, rating) => acc + rating.star, 0) / product.ratings.length
   : 0;
 
+  console.log('order details in page',item);
+
 if (isLoading) {
   return (
     <Container>
@@ -140,6 +142,8 @@ if (error) {
 
                 const images = selectedColorObject?.images?.map((imgObj) => imgObj.secure_url) || [];
                 const itemPrice = item?.price?.$numberDecimal || 0;
+                const totalPrice = singleOrder?.totalPrice?.$numberDecimal || 0;
+
 
                 return (
                   <Grid2 size={{ md: 12 }} key={index}>
