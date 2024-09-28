@@ -34,7 +34,7 @@ const OrderDeatils = () => {
     (colorObj) => colorObj.color === selectedColour
   );
   // Get the images array from the selected color object
-  const totalPrice = singleOrder.totalPrice.$numberDecimal;
+  const totalPrice = singleOrder?.totalPrice?.$numberDecimal || 0;
 
   const toggleReviewForm=()=>{
     setReviewOpen((prev) => !prev);
@@ -61,7 +61,7 @@ const OrderDeatils = () => {
     dispatch(giveReview(reviewPayload)); // Pass review data along with productId
   };
 
-  const averageRating = product.ratings.length
+  const averageRating = Array.isArray(product.ratings) && product.ratings.length
   ? product.ratings.reduce((acc, rating) => acc + rating.star, 0) / product.ratings.length
   : 0;
 
@@ -142,7 +142,7 @@ if (error) {
 
                 const images = selectedColorObject?.images?.map((imgObj) => imgObj.secure_url) || [];
                 const itemPrice = item?.price?.$numberDecimal || 0;
-                const totalPrice = singleOrder?.totalPrice?.$numberDecimal || 0;
+                
 
 
                 return (
