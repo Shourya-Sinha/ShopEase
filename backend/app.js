@@ -49,7 +49,7 @@ app.use(cors({
     // origin: ["http://localhost:5173"],
     origin: process.env.NODE_ENV === "Development" 
     ? "http://localhost:5173" 
-    : "https://admin-ecom-9d97.onrender.com",
+    : "https://shopease-5jj5.onrender.com",
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE','PATCH'],
     allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'Origin', 'X-Custom-Header'],
@@ -58,8 +58,8 @@ app.use(cors({
 if(process.env.MODE_ENV === "Development"){
     app.use(morgan('dev'));
 }
-// app.use("https://admin-ecom-9d97.onrender.com",limiter);
-app.use("http://localhost:5173",limiter);
+app.use("https://shopease-5jj5.onrender.com",limiter);
+// app.use("http://localhost:5173",limiter);
 
 app.use(cookieSession({
     name: 'session',
@@ -84,11 +84,11 @@ app.use('/admin',CouponRouter);
 
 app.use(handleAppError);
 
-// app.use(express.static(path.join(__dirname, 'admin_frontend/dist')))
+app.use(express.static(path.join(__dirname, 'user_frontend/dist')))
 
-// app.get('*', (req, res) => {
-//     res.sendFile(path.join(__dirname, 'admin_frontend','dist','index.html'));
-// });
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'user_frontend','dist','index.html'));
+});
 
 export default app;
 

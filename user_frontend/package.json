@@ -18,6 +18,7 @@
     "@reduxjs/toolkit": "^2.2.7",
     "axios": "^1.7.7",
     "jsonwebtoken": "^9.0.2",
+    "newecomm_project": "file:..",
     "phosphor-react": "^1.4.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

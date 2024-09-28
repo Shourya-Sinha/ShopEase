@@ -399,7 +399,7 @@ const sendTokenForForgotPassowrd = async (req, res, next) => {
     await user.save({ validateModifiedOnly: true });
     // 3 send reset token via email
     // const resetUrl = `http://localhost:3000/auth/new-password?token=${resetToken}`;
-    const resetUrl = `http://localhost:5173/new-password?token=${resetToken}`;
+    const resetUrl = `https://shopease-5jj5.onrender.com/new-password?token=${resetToken}`;
     const emailData = {
       recipient: user.email,
       sender: "shouryasinha.c@gmail.com",

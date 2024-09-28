@@ -3,7 +3,8 @@ import axios from "axios";
 import { showSnackbar } from "./InitialSlice";
 import { useSelector } from "react-redux";
 
-export const authBaseUrl = 'http://localhost:7000/auth/user';
+// export const authBaseUrl = 'http://localhost:7000/auth/user';
+export const authBaseUrl = 'https://shopease-5jj5.onrender.com/auth/user';
 
 const initialState = {
     isLoggedIn: false,

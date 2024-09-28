@@ -3,8 +3,10 @@ import axios from "axios";
 import { showSnackbar } from "./InitialSlice";
 import { authBaseUrl } from "./AuthSlice";
 
-export const productBaseUrl = 'http://localhost:7000/admin';
-export const userBaseUrl = 'http://localhost:7000/user';
+// export const productBaseUrl = 'http://localhost:7000/admin';
+// export const userBaseUrl = 'http://localhost:7000/user';
+export const productBaseUrl = 'https://shopease-5jj5.onrender.com/admin';
+export const userBaseUrl = 'https://shopease-5jj5.onrender.com/user';
 
 const initialState={
     isLoading: false,
